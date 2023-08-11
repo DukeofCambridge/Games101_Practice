@@ -26,7 +26,7 @@ void rst::rasterizer::set_pixel(const Eigen::Vector3f& point, const Eigen::Vecto
 }
 ```
 - 实现效果：
-<video controls height='45%' width='45%' src="./MD_ImageBed/rasterizer1.mp4"></video><video controls height='45%' width='45%' src="./MD_ImageBed/rasterizer2.mp4"></video>
+<video controls height='45%' width='45%' src="https://github.com/DukeofCambridge/Games101_Practice/tree/main/MD_ImageBed/rasterizer1.mp4"></video><video controls height='45%' width='45%' src="https://github.com/DukeofCambridge/Games101_Practice/tree/main/MD_ImageBed/rasterizer2.mp4"></video>
 - 参考资料：
   * Bresenham's line algorithm: https://blog.csdn.net/qq_41883085/article/details/102706471
   * Rodrigues' rotation formula: https://blog.csdn.net/qq_36162042/article/details/115488168
