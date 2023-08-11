@@ -26,8 +26,15 @@ void rst::rasterizer::set_pixel(const Eigen::Vector3f& point, const Eigen::Vecto
 }
 ```
 - 实现效果：
-Uploading image 2023-08-11 20-24-36.mp4…
-https://github.com/DukeofCambridge/Games101_Practice/assets/68137344/c5a7b255-aafa-452f-962d-49e4d39f27dd
+
+
+https://github.com/DukeofCambridge/Games101_Practice/assets/68137344/090e2952-7c5d-4c45-bd05-d8d9d2ce304e
+
+
+
+
+https://github.com/DukeofCambridge/Games101_Practice/assets/68137344/8814a175-2453-4c8d-b3ee-7ce5bdac3b8b
+
 
 - 参考资料：
   * Bresenham's line algorithm: https://blog.csdn.net/qq_41883085/article/details/102706471
