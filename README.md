@@ -39,3 +39,19 @@ https://github.com/DukeofCambridge/Games101_Practice/assets/68137344/8814a175-24
 - 参考资料：
   * Bresenham's line algorithm: https://blog.csdn.net/qq_41883085/article/details/102706471
   * Rodrigues' rotation formula: https://blog.csdn.net/qq_36162042/article/details/115488168
+
+## Assignment 2 Z-Test 深度测试
+- 核心：fragment-level z-test
+- 描述：实现以下几个方法，对三角形内部进行插值填充（颜色与深度）
+  * 对视口变换后的三角形生成包围盒(bounding box)
+  * 判断某点是否在三角形内部
+  * 计算三角形内部点的重心坐标，用于插值
+  * 完成z-test的逻辑
+  * 利用超采样的方法抗锯齿(MSAA)，将每个像素分成四份，分别计算是否位于三角形内，像素的颜色设定为四个子像素的平均值
+
+- 实现效果：
+<div align="center">
+<img src="./MD_ImageBed/depthTest.png" width=60%></div><br/>
+采用MSAA抗锯齿后的效果对比（右图为超采样处理后，本质就是模糊了边界）: <br/><br/>
+<div align="center">
+<img src="./MD_ImageBed/msaa_contrast.png" width=60%></div>
