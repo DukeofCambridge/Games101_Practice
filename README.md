@@ -5,7 +5,7 @@
 <div align="center">
 <img src="./MD_ImageBed/env1.png" width=45%><img src="MD_ImageBed/env2.png" width=45%> </div>
 
-## Assignment 1 Rasterizer 光栅化器
+## Assignment 1 Rotation&Projection 旋转与投影
 - 核心：MVP变换
 - 描述：实现以下几个函数，模拟三角形绕过原点的任意轴进行旋转并经光栅化绘制在屏幕上的过程。
   * model_transformation(Vector3f axis, float rotation_angle)  // 输入旋转轴与角度，得到对应的模型变换矩阵
@@ -40,7 +40,7 @@ https://github.com/DukeofCambridge/Games101_Practice/assets/68137344/8814a175-24
   * Bresenham's line algorithm: https://blog.csdn.net/qq_41883085/article/details/102706471
   * Rodrigues' rotation formula: https://blog.csdn.net/qq_36162042/article/details/115488168
 
-## Assignment 2 Z-Test 深度测试
+## Assignment 2 Z-buffering 深度缓存
 - 核心：fragment-level z-test
 - 描述：实现以下几个方法，对三角形内部进行插值填充（颜色与深度）
   * 对视口变换后的三角形生成包围盒(bounding box)
