@@ -79,3 +79,14 @@ texture双线性插值采样前后效果对比：<br/>
 - 参考资料：
   * Bump Mapping: https://blog.csdn.net/qq_38065509/article/details/106050879
   * DownSamping and UpSampling: https://blog.csdn.net/zhibing_ding/article/details/125254670
+
+## Assignment 4 Bezier Curve 贝塞尔曲线
+- 核心：bezier-curve generation
+- 描述：实现以下几个方法，通过点击屏幕生成一条贝塞尔曲线
+  * 借助 Bernstein polynomials 生成贝塞尔曲线
+  * 通过 De Casteljau's algorithm 生成贝塞尔曲线
+  * 通过计算哈夫曼距离实现贝塞尔曲线反走样
+
+- 实现效果：
+<div align="center">
+<img src="./MD_ImageBed/contrast_bezier.png" width=60%><br/>反走样效果对比</div>
