@@ -55,3 +55,27 @@ https://github.com/DukeofCambridge/Games101_Practice/assets/68137344/8814a175-24
 采用MSAA抗锯齿后的效果对比（右图为超采样处理后，本质就是模糊了边界）: <br/><br/>
 <div align="center">
 <img src="./MD_ImageBed/msaa_contrast.png" width=60%></div>
+
+## Assignment 3 Shading 着色
+- 核心：fragment shader
+- 描述：实现以下几个方法，熟悉几种常见的片元着色的逻辑
+  * 在assignment2的基础上完善着色逻辑，将深度、法线、纹理坐标、view-space坐标等插值信息传递给fragment shader计算每个像素的颜色值
+  * 实现基于blinn-phong 光照模型的 phong shader
+  * 实现纹理采样的 texture shader
+  * 实现基于凹凸贴图技术的 bump shader
+  * 实现基于位移贴图技术的 displacement shader
+  * 实现对texture mapping进行双线性插值
+
+- 实现效果：
+<div align="center">
+<img src="./MD_ImageBed/phong.png" width=40%><img src="./MD_ImageBed/normal_fragment_shader.png" width=40%><br/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp phong shader &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp normal shader</div><br/>
+<div align="center">
+<img src="./MD_ImageBed/bump_hmap.png" width=40%><img src="./MD_ImageBed/displacement.png" width=40%><br/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp bump shader &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp displacement shader</div>
+
+texture双线性插值采样前后效果对比：<br/>
+<div align="center">
+<img src="./MD_ImageBed/contrast_sampling.png" width=60%></div>
+
+- 参考资料：
+  * Bump Mapping: https://blog.csdn.net/qq_38065509/article/details/106050879
+  * DownSamping and UpSampling: https://blog.csdn.net/zhibing_ding/article/details/125254670
