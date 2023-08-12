@@ -74,6 +74,8 @@ namespace rst
 
         std::vector<Eigen::Vector3f>& frame_buffer() { return frame_buf; }
 
+        int MSAA(int x, int y, const Vector3f* _v, int n, int m, float z, Eigen::Vector3f color);
+
     private:
         void draw_line(Eigen::Vector3f begin, Eigen::Vector3f end);
 
@@ -99,5 +101,9 @@ namespace rst
 
         int next_id = 0;
         int get_next_id() { return next_id++; }
+
+        std::vector<Eigen::Vector3f> msaa_frame_buf;
+        std::vector<float> msaa_depth_buf;
+
     };
 }
