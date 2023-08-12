@@ -68,9 +68,9 @@ https://github.com/DukeofCambridge/Games101_Practice/assets/68137344/8814a175-24
 
 - 实现效果：
 <div align="center">
-<img src="./MD_ImageBed/phong.png" width=40%><img src="./MD_ImageBed/normal_fragment_shader.png" width=40%><br/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp phong shader &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp normal shader</div><br/>
+<img src="./MD_ImageBed/phong.png" width=40%><img src="./MD_ImageBed/normal_fragment_shader.png" width=40%><br/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp phong shader &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp normal shader</div><br/>
 <div align="center">
-<img src="./MD_ImageBed/bump_hmap.png" width=40%><img src="./MD_ImageBed/displacement.png" width=40%><br/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp bump shader &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp displacement shader</div>
+<img src="./MD_ImageBed/bump_hmap.png" width=40%><img src="./MD_ImageBed/displacement.png" width=40%><br/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp bump shader &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp displacement shader</div>
 
 texture双线性插值采样前后效果对比：<br/>
 <div align="center">
