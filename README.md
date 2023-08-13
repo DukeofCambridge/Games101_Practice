@@ -124,3 +124,71 @@ https://github.com/DukeofCambridge/Games101_Practice/assets/68137344/8814a175-24
 
 - 参考资料：
    * PBRT-BVH&SAH: https://zhuanlan.zhihu.com/p/50720158; https://zhuanlan.zhihu.com/p/475966001
+
+## Assignment 7 PathTracing 路径追踪
+- 核心：path tracing
+- 描述：
+  * 实现基于path tracing算法的光线追踪
+  * 多线程执行渲染
+  * 实现Microfacet Material
+
+- 实现效果：
+
+- 核心伪代码：
+```c++
+// 输入camera与pixel的位置（遍历所有pixels）
+float generationRay(vec3 camera, vec3 pixel)
+{
+    float pixel_radiance = 0.0; //初始化像素受到的辐射率
+    for(int i=0; i < count; i++) //从相机处向每个像素的方向发射若干根光线，结果取均值
+    {
+        vec3 pos = random() by pdf; //根据pdf随机得到像素内的一个位置
+        ray r = ray(camera, pos-camera); //发射射线
+        if(r hit object at p) //如果射线打到物体上，交点为P
+        {
+            //利用shade()函数计算P点往camera方向的radiance，所有光线结果取均值
+            pixel_radiance += (1/count) * shade(p, camera-pos);
+        }
+    }
+    return pixel_radiance;
+}
+```
+```c++
+// 输入点P坐标和从P点到camera的方向向量，计算光线颜色，用来设置这根光线通过的像素的颜色
+float shade(vec3 p, vec3 wo)
+{
+    //直接光部分
+    vec3 q = random() by pdf_light; //光源上随机采样一个Q点，保证不浪费这根光线的计算
+    vec3 wi = normalize (q - p); //从点P到点Q的方向向量
+    float l_dir = vec3(0.0); //直接光颜色初始化
+    ray r2light = ray(p, wi); //发射光线
+    if(r2light hit light at q) //如没有障碍物则计算颜色
+        l_dir = fr(p, wi, wo) * li(p, wi) * dot(n, wi) * dot(n`, wi) / pdf_light(q) / len(q-p)^2; 
+        // 这里采用蒙特卡洛方法代替求积分计算渲染方程（反射方程），但采样数N=1，所以概率密度函数就是1/A（A是面光源面积），通过每一像素发射大量光线求均值的方法来减小误差
+        // 该式为反射方程的变体，d(wi)=d(A)*dot(n`, wi)/len(q-p)^2; 即立体角等于球面上对应的一个面积除以半径平方，转变为对A积分（用蒙特卡洛方法求解）
+        // fr(p, wi, wo): BRDF
+        // li(p,wi): P点在wi方向接收的辐射率 radiance
+        // li(p,wi)*dot(n,wi): P点发出的辐照度 irradiance
+        // pdf_light(q): 光源采样的概率密度函数（1/A）
+        // len(q-p)^2: PQ距离的平方
+    
+    //间接光部分
+    float l_indir = vec3(0.0); //间接光颜色初始化
+    float prob = 0.6; //轮盘赌方法保证函数不会无限递归，同时又保证l_indir期望值不变
+    float num = random(0,1);
+    if(num < prob)
+    {
+        vec3 wi = random() by pdf; //间接光部分仍是在半球上的各个方向进行立体角的随机采样，对wi积分，因此pdf=1/2π
+        ray r = ray(p, wi); //发射光线
+        // object不能是光源，如果r打在了光源上则忽略
+        if(r hit object at o)
+            l_indir = fr(p, wi, wo) * shade(o, -wi) * dot(n, wi) / pdf(wi) / prob;
+            //仍然是反射方程的变体，递归调用shade(o, -wi)函数代替li(p,wi)，同时所得结果要除以prob以维持l_indir期望值不变
+    }
+    return emission + l_dir + l_indir; //P点的 自发光+直接光辐射+间接光辐射 作为光线颜色的最终值
+}
+```
+- 参考资料：
+  * PathTracing: https://zhuanlan.zhihu.com/p/370162390
+  * PBR: https://learnopengl.com/PBR/Theory
+  * Microfacet BRDF: https://sites.cs.ucsb.edu/~lingqi/teaching/resources/GAMES101_Lecture_17.pdf
