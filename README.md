@@ -55,9 +55,9 @@ https://github.com/DukeofCambridge/Games101_Practice/assets/68137344/8814a175-24
 - 实现效果：
 <div align="center">
 <img src="./MD_ImageBed/depthTest.png" width=60%></div><br/>
-采用MSAA抗锯齿后的效果对比（右图为超采样处理后，本质就是模糊了边界）: <br/><br/>
+
 <div align="center">
-<img src="./MD_ImageBed/msaa_contrast.png" width=60%></div>
+<img src="./MD_ImageBed/msaa_contrast.png" width=60%><br/>采用MSAA抗锯齿后的效果对比（右图为超采样处理后，本质就是模糊了边界）</div>
 
 ## Assignment 3 Shading 着色
 - 核心：fragment shader
@@ -75,9 +75,8 @@ https://github.com/DukeofCambridge/Games101_Practice/assets/68137344/8814a175-24
 <div align="center">
 <img src="./MD_ImageBed/bump_hmap.png" width=40%><img src="./MD_ImageBed/displacement.png" width=40%><br/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp bump shader &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp displacement shader</div>
 
-texture双线性插值采样前后效果对比：<br/>
 <div align="center">
-<img src="./MD_ImageBed/contrast_sampling.png" width=60%></div>
+<img src="./MD_ImageBed/contrast_sampling.png" width=60%><br/>texture双线性插值采样前后效果对比</div>
 
 - 参考资料：
   * Bump Mapping: https://blog.csdn.net/qq_38065509/article/details/106050879
@@ -108,3 +107,20 @@ texture双线性插值采样前后效果对比：<br/>
 
 - 参考资料：
   * Möller Trumbore Algorithm: https://zhuanlan.zhihu.com/p/451582864
+
+## Assignment 6 BVH 包围盒加速结构
+- 核心：bounding volume hierarchy
+- 描述：实现以下几个方法，通过 BVH 方法加速光追处理
+  * 实现光线与包围盒求交算法
+  * 利用包围盒加速光线与场景求交
+  * 优化包围盒加速结构生成算法（实现SAH算法）
+
+- 实现效果：
+<div align="center">
+<img src="./MD_ImageBed/bunny.jpg" width=60%><br/></div>
+<br/>
+<div align="center">
+<img src="./MD_ImageBed/contrast_bounding_box.png" width=60%><br/>包围盒构建算法对比</div>
+
+- 参考资料：
+   * PBRT-BVH&SAH: https://zhuanlan.zhihu.com/p/50720158; https://zhuanlan.zhihu.com/p/475966001
