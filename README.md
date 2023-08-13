@@ -1,17 +1,20 @@
 # Games101_Practice
 
 ## 环境配置
-为VS添加 OpenCV 和 Eigen 库：<br/>
+- 为VS添加 `OpenCV` 和 `Eigen` 库：<br/>
 <div align="center">
 <img src="./MD_ImageBed/env1.png" width=45%><img src="MD_ImageBed/env2.png" width=45%> </div>
+
+- 项目属性改为ISO C++17 语言标准
+- 预处理器定义添加 `_CRT_SECURE_NO_WARNINGS` 以正常使用 `fopen` 等方法
 
 ## Assignment 1 Rotation&Projection 旋转与投影
 - 核心：MVP变换
 - 描述：实现以下几个函数，模拟三角形绕过原点的任意轴进行旋转并经光栅化绘制在屏幕上的过程。
-  * model_transformation(Vector3f axis, float rotation_angle)  // 输入旋转轴与角度，得到对应的模型变换矩阵
-  * view_transformation(Vector3f eye_pos)  // 输入摄像机位置，得到对应的观测变换矩阵
-  * project_transformation(float eye_fov, float aspect_ratio, float zNear, float zFar) // 输入field of view，视野长宽比，近远平面距离，得到对应的透视投影变换矩阵
-  * draw(std::map<int, std::vector<Eigen::Vector3f>> pos_buf, std::map<int, std::vector<Eigen::Vector3i>> indice_buf) // 输入三角形顶点坐标，应用MVP变换，然后进行viewport transformation，将三角形转换到指定大小的屏幕上
+  * `model_transformation(Vector3f axis, float rotation_angle)`  // 输入旋转轴与角度，得到对应的模型变换矩阵
+  * `view_transformation(Vector3f eye_pos)`  // 输入摄像机位置，得到对应的观测变换矩阵
+  * `project_transformation(float eye_fov, float aspect_ratio, float zNear, float zFar)` // 输入field of view，视野长宽比，近远平面距离，得到对应的透视投影变换矩阵
+  * `draw(std::map<int, std::vector<Eigen::Vector3f>> pos_buf, std::map<int, std::vector<Eigen::Vector3i>> indice_buf)` // 输入三角形顶点坐标，应用MVP变换，然后进行viewport transformation，将三角形转换到指定大小的屏幕上
 
 - 代码细节：
 ```c++
