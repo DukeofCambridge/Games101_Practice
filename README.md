@@ -90,3 +90,18 @@ texture双线性插值采样前后效果对比：<br/>
 - 实现效果：
 <div align="center">
 <img src="./MD_ImageBed/contrast_bezier.png" width=60%><br/>反走样效果对比</div>
+
+## Assignment 5 RayTracing 光线追踪
+- 核心：ray-object intersection judgement 
+- 描述：实现以下几个方法，通过 whitted-style ray tracing 的思路渲染场景
+  * 实现屏幕空间到观测空间的变换，从每个像素处发射光线
+  * 实现判断光线与球体、三角形相交的逻辑
+  * 对不同类型物体（表面）分别计算 hitcolor
+  * 利用fresnel equation计算反射/折射光比重
+
+- 实现效果：
+<div align="center">
+<img src="./MD_ImageBed/binary.jpg" width=60%><br/></div>
+
+- 参考资料：
+  * Möller Trumbore Algorithm: https://zhuanlan.zhihu.com/p/451582864
