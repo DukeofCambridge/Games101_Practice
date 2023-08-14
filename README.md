@@ -197,3 +197,14 @@ float shade(vec3 p, vec3 wo)
   * PathTracing: https://zhuanlan.zhihu.com/p/370162390
   * PBR: https://learnopengl.com/PBR/Theory
   * Microfacet BRDF: https://sites.cs.ucsb.edu/~lingqi/teaching/resources/GAMES101_Lecture_17.pdf; http://simonstechblog.blogspot.com/2011/12/microfacet-brdf.html
+
+## Assignment 8 MassSpringSystem 质点弹簧系统
+- 核心：mass-spring system
+- 描述：用几种不同方法模拟质点弹簧系统，即计算每根弹簧两端的受力，从而得到每个质点的速度与位置
+  * 显式/半隐式欧拉法
+  * 显式Verlet法
+  * 公式中加入阻尼模拟各种摩擦力
+
+- 实现效果：
+<div align="center">
+<img src="./MD_ImageBed/mass-spring-system.gif" width=40%></div>
