@@ -133,11 +133,15 @@ https://github.com/DukeofCambridge/Games101_Practice/assets/68137344/8814a175-24
   * 实现Microfacet Material
 
 - 实现效果：
+<div align="center">
+<img src="./MD_ImageBed/cornell box.jpg" width=40%><br/>SPP=256, Cornell Box</div>
+<br/><div align="center">
+<img src="./MD_ImageBed/microfacet.jpg" width=40%><br/>SPP=256, Microfacet Material</div>
 
 - 核心伪代码：
 ```c++
 // 输入camera与pixel的位置（遍历所有pixels）
-float generationRay(vec3 camera, vec3 pixel)
+float generateRay(vec3 camera, vec3 pixel)
 {
     float pixel_radiance = 0.0; //初始化像素受到的辐射率
     for(int i=0; i < count; i++) //从相机处向每个像素的方向发射若干根光线，结果取均值
@@ -146,7 +150,8 @@ float generationRay(vec3 camera, vec3 pixel)
         ray r = ray(camera, pos-camera); //发射射线
         if(r hit object at p) //如果射线打到物体上，交点为P
         {
-            //利用shade()函数计算P点往camera方向的radiance，所有光线结果取均值
+            if(p.emission) return p.emission; //如果直接打在光源上，则直接返回P点光源颜色
+            //打在非光源物体上，利用shade()函数计算P点往camera方向的radiance，所有光线结果取均值
             pixel_radiance += (1/count) * shade(p, camera-pos);
         }
     }
@@ -185,10 +190,10 @@ float shade(vec3 p, vec3 wo)
             l_indir = fr(p, wi, wo) * shade(o, -wi) * dot(n, wi) / pdf(wi) / prob;
             //仍然是反射方程的变体，递归调用shade(o, -wi)函数代替li(p,wi)，同时所得结果要除以prob以维持l_indir期望值不变
     }
-    return emission + l_dir + l_indir; //P点的 自发光+直接光辐射+间接光辐射 作为光线颜色的最终值
+    return l_dir + l_indir; //P点的 直接光辐射+间接光辐射 作为光线颜色的最终值
 }
 ```
 - 参考资料：
   * PathTracing: https://zhuanlan.zhihu.com/p/370162390
   * PBR: https://learnopengl.com/PBR/Theory
-  * Microfacet BRDF: https://sites.cs.ucsb.edu/~lingqi/teaching/resources/GAMES101_Lecture_17.pdf
+  * Microfacet BRDF: https://sites.cs.ucsb.edu/~lingqi/teaching/resources/GAMES101_Lecture_17.pdf; http://simonstechblog.blogspot.com/2011/12/microfacet-brdf.html
